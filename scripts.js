@@ -76,7 +76,7 @@ function validaciones() {
 function total_pago() {
   const valorTicket = 200;
   let totalValorTicket = cantidad.value * valorTicket;
-  switch (categoria.value) {
+  /*switch (categoria.value) {
     case 1:
       totalValorTicket = totalValorTicket - 0.8 * totalValorTicket;
       break;
@@ -88,13 +88,13 @@ function total_pago() {
       break;
     default:
       totalValorTicket = totalValorTicket;
-  }
-  /*if (categoria.value == 1) {
-  // totalValorTicket = totalValorTicket -(0.8 * totalValorTicket);
+  }*/
+  if (categoria.value == 1) {
+  totalValorTicket = totalValorTicket -(0.8 * totalValorTicket);
   } else if (categoria.value == 2) {
     totalValorTicket = totalValorTicket - (0.5 * totalValorTicket);
   } else if (categoria.value == 3){
     totalValorTicket = totalValorTicket - (0.15 * totalValorTicket);
-  }*/
+  }
   total.innerHTML = totalValorTicket;
 }
