@@ -1,3 +1,10 @@
+header{
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    margin-top: -30px;
+    padding-top: 5px;
+}
 .cartas {
   padding: 2px 2px 2px 2px;
   align-items: center;
@@ -96,4 +103,50 @@ footer{
 .card-text-oradores{
     font-weight: lighter;
     text-align: justify;
+}
+/*Nombres Playa y Texto*/
+#imgPlaya{
+    margin-top: 2%;
+    color: white;
+}
+
+h6{
+    text-align: center;
+}
+
+.card-body-text-imgPlaya{
+    font-weight: lighter;
+    padding-top: 2%;
+}
+.textoPlaya{
+    padding-top: 2px;
+}
+.imagenPlaya{
+    padding-right: 2%;
+}
+#foot{
+   
+    background: linear-gradient(darkblue,black);;
+}
+input:hover{
+    background-color: aqua;
+}
+.comprarTickets{
+    color:rgba(8, 252, 0, 0.788);
+}
+/*Contenedor Formulario*/
+
+.contenedorFormulario{
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-top: 2%;
+}
+
+.buttonFormulario{
+    color: white;
+    background-color: rgba(8, 252, 0, 0.788);
+}
+
+.recuerda{
+    font-weight: lighter;
 }

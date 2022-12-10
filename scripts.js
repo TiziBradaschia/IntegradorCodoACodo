@@ -1,4 +1,3 @@
-
 const nombre = document.getElementById("nombre");
 const msjNombre = document.getElementById("msjNombre");
 const apellido = document.getElementById("apellido");
@@ -16,8 +15,7 @@ const btnResumen = document.getElementById("btnResumen");
 function validarNombre() {
   if (nombre.value.length < 1) {
     msjNombre.innerHTML = "Nombre invalido";
-  }
-  else {
+  } else {
     return 0;
   }
 }
@@ -25,8 +23,7 @@ function validarNombre() {
 function validarApellido() {
   if (apellido.value.length < 2) {
     msjApellido.innerHTML = "Apellido invalido";
-  } 
-  else {
+  } else {
     return 0;
   }
 }
@@ -34,8 +31,7 @@ function validarApellido() {
 function validarMail() {
   if (!expRegular.test(mail.value)) {
     msjMail.innerHTML = "E-mail invalido";
-  }
-  else {
+  } else {
     return 0;
   }
 }
@@ -49,47 +45,56 @@ function validarCantidad() {
     return 0;
   }
 }
-function limpiarComentarios(){
-    msjNombre.innerHTML = ""; 
-    msjApellido.innerHTML = "";
-    msjMail.innerHTML = "";
-    msjCantidad.innerHTML = "";
-   
+function limpiarComentarios() {
+  msjNombre.innerHTML = "";
+  msjApellido.innerHTML = "";
+  msjMail.innerHTML = "";
+  msjCantidad.innerHTML = "";
 }
-function limpiarTodo(){
+function limpiarTodo() {
+  limpiarComentarios();
+  total.innerHTML = "";
+  nombre.value = "";
+  apellido.value = "";
+  cantidad.value = "";
+  mail.value = "";
+}
+function validaciones() {
+  limpiarComentarios();
+  let a = validarApellido();
+  let b = validarCantidad();
+  let c = validarMail();
+  let d = validarNombre();
+  if (a || b || c || d == 1) {
+    window.alert("No puede ser calculado el total");
+  } else {
     limpiarComentarios();
-    total.innerHTML = "";
-    nombre.value="";
-    apellido.value="";
-    cantidad.value="";
-    mail.value="";
-}
-function validaciones(){
-limpiarComentarios();  
-let a=validarApellido();
-let b=validarCantidad();
-let c=validarMail();
-let d=validarNombre();
-if (a||b||c||d==1){
-
- window.alert("No puede ser calculado el total");
-}
-else{
-limpiarComentarios();  
-total_pago();
-}
+    total_pago();
+  }
 }
 
 function total_pago() {
- const valorTicket = 200;
+  const valorTicket = 200;
   let totalValorTicket = cantidad.value * valorTicket;
-  if (categoria.value == 1) {
-    totalValorTicket = totalValorTicket -(0.8 * totalValorTicket);
+  switch (categoria.value) {
+    case 1:
+      totalValorTicket = totalValorTicket - 0.8 * totalValorTicket;
+      break;
+    case 2:
+      totalValorTicket = totalValorTicket - 0.5 * totalValorTicket;
+      break;
+    case 3:
+      totalValorTicket = totalValorTicket - 0.15 * totalValorTicket;
+      break;
+    default:
+      totalValorTicket = totalValorTicket;
+  }
+  /*if (categoria.value == 1) {
+  // totalValorTicket = totalValorTicket -(0.8 * totalValorTicket);
   } else if (categoria.value == 2) {
     totalValorTicket = totalValorTicket - (0.5 * totalValorTicket);
-  } else {
+  } else if (categoria.value == 3){
     totalValorTicket = totalValorTicket - (0.15 * totalValorTicket);
-  }
-
+  }*/
   total.innerHTML = totalValorTicket;
 }
