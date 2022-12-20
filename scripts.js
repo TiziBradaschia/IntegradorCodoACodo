@@ -45,6 +45,22 @@ function validarCantidad() {
     return 0;
   }
 }
+/*Validación Descripcion
+function validarDescripcion() {
+  if (descripcion.value.length < 10) {
+    msjDescripcion.innerHTML = "Describa por favor";
+  } else {
+    return 0;
+  }
+}*/ 
+/*Validación Tema
+function validarTema() {
+  if (tema.value==0) {
+    msjTema.innerHTML = "Seleccione un tema por favor";
+  } else {
+    return 0;
+  }
+}*/ 
 function limpiarComentarios() {
   msjNombre.innerHTML = "";
   msjApellido.innerHTML = "";
@@ -98,3 +114,18 @@ function total_pago() {
   }
   total.innerHTML = totalValorTicket;
 }
+/*function validar_campos_orador() {
+  //limpiarComentarios();
+  let a = validarApellido();
+  let b = validarDescripcion();
+  let c = validarTema();
+  let d = validarNombre();
+  if (a || b || c || d == 1) {
+    window.alert("Necesita completar los campos");
+  } else {
+    
+   window.location.href ="orador.php";
+  }
+  }*/
+
+

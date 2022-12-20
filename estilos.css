@@ -143,10 +143,41 @@ input:hover{
 }
 
 .buttonFormulario{
-    color: white;
-    background-color: rgba(8, 252, 0, 0.788);
+    color: white !important;
+    background-color: rgba(11, 112, 7, 0.788);
+    
 }
+.buttonFormulario:hover{
+    background: grey;
+    color:rgba(11, 112, 7, 0.788) !important;
+}
+.select {
+    margin-top: -10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+/*.buttonFormulario svg{
+    width: 100%;
+    height:100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    fill: none;
+}
+.buttonFormulario rect{
+    width: 100%;
+    height:100%;
+    stroke: blue;
+    stroke-width: 10px;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    transition: .6s ease all;
 
+}
+.buttonFormulario:hover rect{
+    stroke-dashoffset: 0;
+}*/
 .recuerda{
     font-weight: lighter;
+    font-size: 15px;
 }
