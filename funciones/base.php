@@ -15,3 +15,27 @@ function cargarOrador($idCone, $nombre, $apellido, $tema, $descripcion)
         return true;
     }
 }
+
+
+
+function ListarOradores($idCone)
+{
+    $Sql = "Select o.nombre,o.apellido,t.desc_tema,o.descripcion
+    from oradores as o
+    inner join temas as t on t.id=o.tema
+    order by t.desc_tema asc";
+
+    $Lista = mysqli_query($idCone, $Sql);
+    $Listado = array();
+    $i = 0;
+    while ($Fila = mysqli_fetch_array($Lista)) {
+        $Listado[$i]['Nombre'] = $Fila['nombre'];
+        $Listado[$i]['Apellido'] = $Fila['apellido'];
+        $Listado[$i]['Tema'] = $Fila['desc_tema'];
+        $Listado[$i]['Descripcion'] = $Fila['descripcion'];
+        $i++;
+    }
+
+    return $Listado;
+}
+/*tizib 522h4=S!1|d~FipJ*/

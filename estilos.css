@@ -1,7 +1,7 @@
 header{
     width: 100%;
-    position: fixed;
-    z-index: 1;
+    /*position: fixed;
+    z-index: 1;*/
     margin-top: -30px;
     padding-top: 5px;
 }
@@ -181,3 +181,21 @@ input:hover{
     font-weight: lighter;
     font-size: 15px;
 }
+th, td {
+ 
+  padding: 1px 0px 1px 0px;
+  text-align: center;
+}
+tr{
+    color:white;
+   font-size: 18px;
+}
+
+.btn-circle {
+  
+    border-radius: 50px;
+    text-align: center;
+    font-size: 5px;
+  
+}
+
