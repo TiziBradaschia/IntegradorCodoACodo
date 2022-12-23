@@ -2,11 +2,7 @@
 require_once("/funciones/conexion.php");
 require_once("/funciones/base.php");
 $idCone = conectar();
-$nombre = $_REQUEST['nombre'];
-$apellido = $_REQUEST['apellido'];
-$tema = $_REQUEST['tema'];
-$descripcion = $_REQUEST['descripcion'];
-$Ok = cargarOrador($idCone, $nombre, $apellido, $tema, $descripcion);
+
 ?>
 <html lang="es">
 <head>
@@ -57,10 +53,11 @@ $Ok = cargarOrador($idCone, $nombre, $apellido, $tema, $descripcion);
           <td><?php echo $Listado[$i]['Descripcion']; ?></td>
          
 <?php
+      $id=$Listado[$i]['id'];
       echo'<td><a href=""><box-icon  name="show-alt"  size="sm" color="#005eff" animation="tada-hover"></box-icon><b></a></td> ';
-         echo'<td><a href=""><box-icon  name="edit-alt" size="sm" color="#005eff" animation="tada-hover"></box-icon><b></a></td> ';
-         echo'<td><form name="eliminar" method="post" action="index.php">'?><button class="btn btn-danger btn-circle" type="submit"  name="eliminar"  onclick="return confirm ('¿Seguro que desea eliminarlo?')"><box-icon  name="trash"  size="sm" color="white" animation="tada-hover"></box-icon></button></form></td>                      
-          </tr> 
+         echo'<td><a href="modificarorador.php?id='.$id.'"><box-icon  name="edit-alt" size="sm" color="#005eff" animation="tada-hover"></box-icon><b></a></td> ';
+         echo'<td><form name="eliminar" method="post" action="eliminarorador.php?id='.$id.'">'?><button class="btn btn-danger btn-circle" type="submit"  name="eliminar"  onclick="return confirm ('¿Seguro que desea eliminarlo?')"><box-icon  name="trash"  size="sm" color="white" animation="tada-hover"></box-icon></button></form></td>                      
+          </tr>
 <?php 
       }
 ?>
